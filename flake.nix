@@ -14,8 +14,8 @@
 
       rust-bin = pkgs.rust-bin.selectLatestNightlyWith (toolchain:
         toolchain.default.override {
-          targets = [ "thumbv7em-none-eabihf" ];
-          extensions = [ "rust-src" ];
+          targets = [ "x86_64-unknown-none" ];
+          extensions = [ "llvm-tools-preview" "rust-src" ];
         });
       naersk-lib = naersk.lib.${system}.override {
         cargo = rust-bin;
